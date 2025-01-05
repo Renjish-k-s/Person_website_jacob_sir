@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>personal website</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-     <link rel="icon" href="logo.jpg" type="image/gif" sizes="16x16">
+     <link rel="icon" href="./images/logo.jpg" type="image/gif" sizes="16x16">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
  <style>
@@ -56,7 +56,7 @@
     <header class="bg-info" style="position:fixed ;width: 100%;z-index: 1;">
         <div class="row text-white">
         <div class="col-md-6 col-9 p-3 pl-5 text-left">
-    <img src="image.png" alt="Biostar Health" class="img-fluid" style="max-width: 100%; height: auto;">
+    <img src="./images/image.png" alt="Biostar Health" class="img-fluid" style="max-width: 100%; height: auto;">
 </div>
             <div class="col-md-6 col-3 my-auto">
                 <nav class="navbar navbar-expand-lg navbar-light">
@@ -96,7 +96,7 @@
         <div class="row align-items-center">
             <!-- Image Section -->
             <div class="col-md-6 text-center">
-                <img src="profile_pic.jpeg" alt="Dr. Jacob Kuruvilla" 
+                <img src="./images/profile_pic.jpeg" alt="Dr. Jacob Kuruvilla" 
                      class="img-fluid rounded-circle shadow-lg" 
                      style="max-width: 80%; animation: fadeInLeft 1s;">
             </div>
@@ -127,7 +127,7 @@
     <h2 class="text-center">About me</h2><br>
     <div class="row">
       <div class="col-md-4">
-        <img src="profile_pic.jpeg" alt="Doctor Image" class="img-fluid rounded-circle" />
+        <img src="./images/profile_pic.jpeg" alt="Doctor Image" class="img-fluid rounded-circle" />
       </div>
       <div class="col-md-8">
         <h3>Dr. [Full Name]</h3>
@@ -317,7 +317,7 @@
 
 <!-- Popper JS -->
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script src="index.js"></script>
+<script src="./js/index.js"></script>
 
 <!-- Latest compiled JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>

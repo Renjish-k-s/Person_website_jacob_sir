@@ -1,3 +1,7 @@
+<?php include '../include/config.php';?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -53,10 +57,10 @@
         <h2>Login</h2>
         <form id="loginForm" method="post">
             <div class="form-group">
-                <input type="text" class="form-control" id="email" name="email" placeholder="Enter Username" required>
+                <input type="text" class="form-control" id="text" name="email" placeholder="Enter Username" required>
             </div>
             <div class="form-group">
-                <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password" required>
+                <input type="password" class="form-control" id="text" name="password" placeholder="Enter Password" required>
             </div>
 
             <!-- Manual CAPTCHA -->
@@ -65,7 +69,7 @@
                 <input type="text" class="form-control" id="captchaInput" placeholder="Enter the result" required>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-block" id="login_button">Login</button>
+            <button type="submit" class="btn btn-primary btn-block" id="login_button" name="login_admin">Login</button>
            
         </form>
     </div>
@@ -95,6 +99,51 @@
             }
         });
     </script>
+
+<?php
+///////////////////////////////////////////////login part//////////////////////////////////////////////////////////
+
+
+if(isset($_POST['login_admin']))
+{
+
+    $email = strip_tags(trim($_POST['email']));
+    $password = strip_tags(trim($_POST['password']));
+    $email = mysqli_real_escape_string($con, $email);
+    
+    $sql = "SELECT * FROM usertable WHERE username = ?";
+    $stmt = $con->prepare($sql);
+    $stmt->bind_param('s', $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+
+    if ($result->num_rows > 0) {
+        $user = $result->fetch_assoc();
+        // Verify the password with the hashed password in the database
+        if (password_verify($password, $user['password'])) 
+        {
+
+            header("Location: ../Admin/");
+            exit();  // Exit after redirecting
+            //echo '<script>alert("sucess");</script>';
+        } 
+        else 
+            {
+           echo '<script>alert("Invalid username or password!");</script>';
+           
+            } 
+        }
+    else 
+        {
+        echo '<script>alert("Invalid username or password!");</script>';
+        }
+
+
+  // echo '<script>alert("Incorrect");</script>';
+
+}
+?>
 </body>
 
 </html>
