@@ -123,10 +123,11 @@ if(isset($_POST['login_admin']))
         // Verify the password with the hashed password in the database
         if (password_verify($password, $user['password'])) 
         {
-
+echo '<script>alert("sucess");</script>';
+ob_start();
             header("Location: ../Admin/");
             exit();  // Exit after redirecting
-            //echo '<script>alert("sucess");</script>';
+            
         } 
         else 
             {
