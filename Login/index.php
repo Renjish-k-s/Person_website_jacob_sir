@@ -121,14 +121,22 @@ if(isset($_POST['login_admin']))
     if ($result->num_rows > 0) {
         $user = $result->fetch_assoc();
         // Verify the password with the hashed password in the database
-        if (password_verify($password, $user['password'])) 
-        {
-echo '<script>alert("sucess");</script>';
-ob_start();
-            header("Location: ../Admin/");
-            exit();  // Exit after redirecting
+        if (password_verify($password, $user['password'])) {
+            echo '<script>alert("Success");</script>';
             
-        } 
+            // Use output buffering to prevent headers from being sent prematurely
+            ob_start();
+            
+            // Redirect after the alert
+            echo '<script>
+                setTimeout(function() {
+                    window.location.href = "../Admin/";
+                }, 1000); // Delay redirection to show the alert
+            </script>';
+            
+            exit(); // Ensure the script stops executing after this
+        }
+        
         else 
             {
            echo '<script>alert("Invalid username or password!");</script>';
