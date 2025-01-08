@@ -4,15 +4,15 @@
 
 // Define database connection parameters only if they are not already defined
 if (!defined('DB_HOST')) {
-    define('DB_HOST', 'biostarhealth.mysql.database.azure.com');
+    define('DB_HOST', 'localhost');
 }
 
 if (!defined('DB_USER')) {
-    define('DB_USER', 'biostarhealth');
+    define('DB_USER', 'root');
 }
 
 if (!defined('DB_PASS')) {
-    define('DB_PASS', 'renjish1234$');
+    define('DB_PASS', '');
 }
 
 if (!defined('DB_NAME')) {
